@@ -1,14 +1,14 @@
 language: node_js
 node_js:
-  - "8"
+  - "10"
 sudo: false
 dist: trusty
-#addons:
-#  apt:
-#    sources:
-#      - google-chrome
-#    packages:
-#      - google-chrome-stable
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 cache:
   directories:
@@ -19,11 +19,18 @@ branches:
     - master
 
 install:
-  - npm install
+  - yarn
 
 script:
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-  - npm run ng-high-memory -- build --prod --base-href /anno1404/ --progress=true
+  - yarn test s-ng-utils --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - yarn build --prod --base-href /anno1404/ --progress=true
+  - mkdir ~/.dts
+  - yarn dtslint
+  - yarn build s-ng-utils
+  - yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
+
+after_success:
+  - cat coverage/s-ng-utils/lcov.info | node_modules/coveralls/bin/coveralls.js
 
 deploy:
   provider: pages
