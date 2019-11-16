@@ -1,0 +1,59 @@
+{
+  "resourceNames": [
+    "Fish",
+    "Cider",
+    "Spice",
+    "Linen Garments",
+    "Bread",
+    "Beer",
+    "Leather Jerkins",
+    "Books",
+    "Candlestick"
+  ],
+  "buildings": {
+    "Fisherman": {
+      "resource": "Fish",
+      "tpm": 2
+    },
+    "Cider_farm": {
+      "resource": "Cider",
+      "tpm": 1.5
+    },
+    "Weaver's Hut": {
+      "resource": "Linen Garments",
+      "tpm": 2
+    },
+    "Spice Farm": {
+      "resource": "Spice",
+      "tpm": 2
+    }
+  },
+  "peoples": {
+    "Beggars": {
+      "Fish": 700,
+      "Cider": 300
+    },
+    "Peasants": {
+      "Fish": 1000,
+      "Cider": 440
+    },
+    "Citizens": {
+      "Fish": 400,
+      "Spice": 400,
+      "Cider": 440,
+      "Linen Garments": 420
+    },
+    "Patricians": {
+      "Fish": 220
+    },
+    "Noblemen": {
+      "Fish": 160
+    },
+    "Nomads": {
+
+    },
+    "Envoys": {
+
+    }
+  }
+}

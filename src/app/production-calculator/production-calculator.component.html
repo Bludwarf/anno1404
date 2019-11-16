@@ -1,0 +1,251 @@
+<div id="top" class="wrapper">
+  <div id="inputFrame">
+    <div class="bewohner">
+      <ol style="padding-right:5px; border-right:1px solid #cecece;">
+        <li>
+          <ul>
+            <li><input type="radio" name="switchRadio" value="bewohner" checked="checked" alt=""></li>
+            <li><img src="http://www.anno1404-rechner.de/images/iconBewohner.png" height="22" width="22"
+                     alt=""></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><input type="radio" name="switchRadio" value="haus" alt=""></li>
+            <li><img src="http://www.anno1404-rechner.de/images/iconHaus.png" height="22" width="22"
+                     alt="">
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <ol *ngFor="let currentPeople of people">
+        <li>
+          <ul>
+            <li><img [src]="currentPeople.image" height="46" width="46"
+                     [alt]="currentPeople.id"></li>
+            <li>{{currentPeople.id}}</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><input type="radio" checked="checked" alt=""></li>
+            <li><img src="http://www.anno1404-rechner.de/images/iconBewohner.png" height="22" width="22"
+                     alt=""></li>
+            <li><input type="number"
+                       class="cText cTextwidth saveinput bewohnerInput" min="0" max="99999"
+                       [(ngModel)]="currentPeople.count">
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><input type="radio"
+                       [class]="currentPeople.resName.toLowerCase() + 'Radio'" value="haus" alt=""></li>
+            <li><img src="http://www.anno1404-rechner.de/images/iconHaus.png" height="22" width="22"
+                     alt="">
+            </li>
+            <li><input type="text" value="0"
+                       class="cText cTextwidth saveinput hausInput" maxlength="6" alt="" disabled
+                       style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+          </ul>
+        </li>
+      </ol>
+
+    </div>
+
+    <div class="items">
+      <ol *ngFor="let resourceName of resourceNames">
+        <li><img [src]="getImageSrc(resourceName)" height="32" width="32" alt="">
+        </li>
+        <li>
+          <select class="itemselect saveinput"
+                  onchange="$('#itemresult_1').text($('#itemselect_1').val()*25.00)">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </li>
+        <li>+<span class="itemresult">0</span>%</li>
+      </ol>
+    </div>
+
+    <div class="cmd floatright" style="margin-top:5px;">
+      <ol>
+        <li>
+          <label>Entwicklung beachten *translation needed*:</label> <input type="checkbox" name="evocheck"
+                                                                           checked="checked" alt="">
+        </li>
+        <li>
+          <div onclick="javascript:saveinput();" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center">Enregistrer</div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+        <li>
+          <div onclick="javascript:loadinput();" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center">Charger</div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+        <li>
+          <div onclick="$('div#importFrame').fadeIn('slow');" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center">Importieren</div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+        <li>
+          <div onclick="javascript:resetform();" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center"></div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+        <li>
+          <div onclick="javascript:calcform();" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center">Calculer</div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div id="result" style="display: block;">
+    <div class="cmd floatright" style="margin-bottom:5px;">
+      <ol>
+        <li>
+          <div onclick="javascript:saveresult();" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center"></div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+        <li>
+          <div onclick="javascript:compareresult();" class="button_2">
+            <div class="button_2_left"></div>
+            <div class="button_2_center">Comparer</div>
+            <div class="button_2_right"></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div style="clear:both;"></div>
+
+    <table class="bordertable">
+      <tbody>
+      <tr>
+        <th></th>
+        <td colspan="14" style="background-color:#cdedbf;">Requis en Occident</td>
+        <td colspan="7" style="background-color:#fff2ad;">Requis en Orient</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td *ngFor="let resourceName of resourceNames">
+          <img [src]="getImageSrc(resourceName)" height="46" width="46"
+               [alt]="resourceName" [title]="resourceName">
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td *ngFor="let resourceName of resourceNames">
+          <span class="saveresult">{{ getConsumption(resourceName) | building }}</span>
+        </td>
+      </tr>
+      <tr id="difFrame">
+        <th></th>
+        <td>
+          <span id="comparebetrieb_2">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_1">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_4">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_3">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_6">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_7">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_8">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_11">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_12">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_13">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_14">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_15">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_19">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_17">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_16">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_9">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_18">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_10">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_20">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_21">-</span>
+        </td>
+        <td>
+          <span id="comparebetrieb_5">-</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Utilisation</th>
+        <td *ngFor="let resourceName of resourceNames">
+
+          {{ getConsumption(resourceName) | utilization | percentage }}
+
+          <div class="gauge"
+               [ngStyle]="{ 'height': '50px', 'background-color': gaugeColor(getConsumption(resourceName)) }">
+            <div class="gauge-empty" style="background: white;"
+                 [ngStyle]="{ height: emptyGaugeHeight(getConsumption(resourceName)) + '%' }">
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>Chaines de production</th>
+        <td *ngFor="let resourceName of resourceNames">
+          <img src="http://www.anno1404-rechner.de/images/iconLupe.png" height="46" width="46"
+               alt="iconLupe" style="cursor:pointer;"
+               onclick="showPK('5','1','100.0');">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
