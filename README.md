@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Bludwarf/anno1404.svg?branch=master)](https://travis-ci.com/Bludwarf/anno1404)
+
 # Anno1404
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
