@@ -22,7 +22,7 @@ install:
   - yarn
 
 script:
-  - yarn test --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
+#  - yarn test --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
   - yarn build --prod --base-href /anno1404/ --progress=true
 #  - mkdir ~/.dts
 #  - yarn dtslint
