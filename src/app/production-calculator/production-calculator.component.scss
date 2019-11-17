@@ -215,7 +215,7 @@ zoom: 1;
   float: left;
   height: 33px;
   width: 14px;
-  background: url("/assets/images/button_1_left.png");
+  background: url("../../assets/images/button_1_left.png");
 }
 
 .button_2_center {
@@ -224,14 +224,14 @@ zoom: 1;
   color: #432912;
   font-weight: bold;
   line-height: 33px;
-  background: url("/assets/images/button_1_center.png");
+  background: url("../../assets/images/button_1_center.png");
 }
 
 .button_2_right {
   float: left;
   height: 33px;
   width: 14px;
-  background: url("/assets/images/button_1_right.png");
+  background: url("../../assets/images/button_1_right.png");
 }
 
 .pkDisplay {
@@ -402,7 +402,7 @@ zoom: 1;
   color: #d0baa3;
   font-size: 0.85em;
   display: none;
-  background-image: url('/assets/images/loaderbg.png');
+  background-image: url('../../assets/images/loaderbg.png');
   background-repeat: no-repeat;
 }
 

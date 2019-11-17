@@ -30,7 +30,7 @@ p {
   display: flex;
   align-items: center;
   background-color: #1976d2;
-  background-image: url("/assets/images/logo.jpg");
+  background-image: url("../assets/images/logo.jpg");
   background-size: contain;
   background-position: center center;
   color: white;
@@ -207,7 +207,7 @@ a:hover {
 
 .circle-link:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 footer {
