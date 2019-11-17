@@ -56,6 +56,6 @@ export class ProductionCalculatorComponent implements OnInit {
   }
 
   getImageSrc(key: string): string {
-    return `/assets/images/${key}.png`;
+    return `assets/images/${key}.png`;
   }
 }

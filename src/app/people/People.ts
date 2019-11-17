@@ -56,7 +56,7 @@ export class People {
   }
 
   get image(): string {
-    return `/assets/images/${this.id}.png`;
+    return `assets/images/${this.id}.png`;
   }
 }
 
