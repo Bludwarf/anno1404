@@ -23,7 +23,7 @@ install:
 
 script:
 #  - yarn test --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
-  - ng build --prod --base-href /anno1404/
+  - yarn build --prod --base-href /anno1404/
 #  - mkdir ~/.dts
 #  - yarn dtslint
 #  - yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
