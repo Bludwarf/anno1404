@@ -1,6 +1,6 @@
 html, body {
   font-size: 1em;
-  font-family: "Arial";
+  font-family: "Arial", serif;
   background-color: #fff;
   min-width: 1200px;
   padding: 0;
@@ -46,9 +46,8 @@ a:hover {
   width: 1200px;
   background-color: #fff;
   z-index: 1;
-  margin: 0 auto;
   position: relative;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 h1 {
@@ -100,7 +99,7 @@ h2 {
 }
 
 .titlepic {
-  border: 0px;
+  border: 0;
 }
 
 .cText {
@@ -204,7 +203,7 @@ zoom: 1;
 }
 
 .cmd ol li:first-child {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .button_2 {
@@ -216,7 +215,7 @@ zoom: 1;
   float: left;
   height: 33px;
   width: 14px;
-  background: url(http://www.anno1404-rechner.de/images//button_1_left.png);
+  background: url("/assets/images/button_1_left.png");
 }
 
 .button_2_center {
@@ -225,14 +224,14 @@ zoom: 1;
   color: #432912;
   font-weight: bold;
   line-height: 33px;
-  background: url(http://www.anno1404-rechner.de/images//button_1_center.png);
+  background: url("/assets/images/button_1_center.png");
 }
 
 .button_2_right {
   float: left;
   height: 33px;
   width: 14px;
-  background: url(http://www.anno1404-rechner.de/images//button_1_right.png);
+  background: url("/assets/images/button_1_right.png");
 }
 
 .pkDisplay {
@@ -403,7 +402,7 @@ zoom: 1;
   color: #d0baa3;
   font-size: 0.85em;
   display: none;
-  background-image: url('http://www.anno1404-rechner.de/images//loaderbg.png');
+  background-image: url('/assets/images/loaderbg.png');
   background-repeat: no-repeat;
 }
 

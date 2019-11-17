@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {computeUtilization} from '../utilization.pipe';
 
 import * as config from '../../assets/anno1404.config.json';
-import * as externalResources from '../../assets/external-resources.json';
 import {People} from '../people/People';
 
 interface Foo {
@@ -57,6 +56,6 @@ export class ProductionCalculatorComponent implements OnInit {
   }
 
   getImageSrc(key: string): string {
-    return externalResources.images[key];
+    return `/assets/images/${key}.png`;
   }
 }

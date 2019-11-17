@@ -1,6 +1,5 @@
 import {arrayToMap} from '../utils';
 import * as config from '../../assets/anno1404.config.json';
-import * as externalResources from '../../assets/external-resources.json';
 import {Building} from '../builing/building';
 
 export interface Consumption {
@@ -57,7 +56,7 @@ export class People {
   }
 
   get image(): string {
-    return externalResources.images[this.id]
+    return `/assets/images/${this.id}.png`;
   }
 }
 
