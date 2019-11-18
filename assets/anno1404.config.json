@@ -26,6 +26,26 @@
     "Spice Farm": {
       "resource": "Spice",
       "tpm": 2
+    },
+    "Tannery.png": {
+      "resource": "Leather Jerkins",
+      "tpm": 4
+    },
+    "Bakery": {
+      "resource": "Bread",
+      "tpm": 4
+    },
+    "Brewery": {
+      "resource": "Beer",
+      "tpm": 1.5
+    },
+    "Redsmith Workshop": {
+      "resource": "Candlestick",
+      "tpm": 2
+    },
+    "Printing Press": {
+      "resource": "Books",
+      "tpm": 3
     }
   },
   "peoples": {
@@ -44,7 +64,15 @@
       "Linen Garments": 420
     },
     "Patricians": {
-      "Fish": 220
+      "Fish": 220,
+      "Spice": 220,
+      "Bread": 550,
+      "Cider": 230,
+      "Beer": 240,
+      "Linen Garments": 190,
+      "Leather Jerkins": 280,
+      "Books": 160,
+      "Candlestick": 80
     },
     "Noblemen": {
       "Fish": 160
