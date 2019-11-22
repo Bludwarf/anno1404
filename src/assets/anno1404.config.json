@@ -8,7 +8,12 @@
     "Beer",
     "Leather Jerkins",
     "Books",
-    "Candlestick"
+    "Candlestick",
+    "Meat",
+    "Wine",
+    "Fur Coats",
+    "Brocade Robes",
+    "Glasses"
   ],
   "buildings": {
     "Fisherman": {
@@ -46,6 +51,26 @@
     "Printing Press": {
       "resource": "Books",
       "tpm": 3
+    },
+    "Furriers workshop": {
+      "resource": "Fur Coats",
+      "tpm": 2.5
+    },
+    "Butchers Shop": {
+      "resource": "Meat",
+      "tpm": 2.5
+    },
+    "Wine Press": {
+      "resource": "Wine",
+      "tpm": 2
+    },
+    "Opticians Workshop": {
+      "resource": "Glasses",
+      "tpm": 2
+    },
+    "Silk Weaving Mill": {
+      "resource": "Brocade Robes",
+      "tpm": 3
     }
   },
   "peoples": {
@@ -75,7 +100,20 @@
       "Candlestick": 80
     },
     "Noblemen": {
-      "Fish": 160
+      "Fish": 160,
+      "Spice": 160,
+      "Bread": 390,
+      "Meat": 220,
+      "Cider": 130,
+      "Beer": 140,
+      "Wine": 200,
+      "Linen Garments": 80,
+      "Leather Jerkins": 160,
+      "Fur Coats": 160,
+      "Brocade Robes": 142,
+      "Books": 90,
+      "Glasses": 117,
+      "Candlestick": 60
     },
     "Nomads": {
 
