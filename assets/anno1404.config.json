@@ -54,6 +54,26 @@
     "Brocade Robes": {
       "people": "Noblemen",
       "count": 4000
+    },
+    "Milk": {
+      "people": "Nomads",
+      "count": 145
+    },
+    "Carpets": {
+      "people": "Nomads",
+      "count": 295
+    },
+    "Pearl Necklaces": {
+      "people": "Envoys",
+      "count": 1040
+    },
+    "Perfume": {
+      "people": "Envoys",
+      "count": 2200
+    },
+    "Marzipan": {
+      "people": "Envoys",
+      "count": 4000
     }
   },
   "buildings": {
