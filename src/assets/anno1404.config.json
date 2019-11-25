@@ -13,7 +13,14 @@
     "Wine",
     "Fur Coats",
     "Brocade Robes",
-    "Glasses"
+    "Glasses",
+    "Dates",
+    "Milk",
+    "Carpets",
+    "Marzipan",
+    "Coffee",
+    "Pearl Necklaces",
+    "Perfume"
   ],
   "buildings": {
     "Fisherman": {
@@ -71,6 +78,34 @@
     "Silk Weaving Mill": {
       "resource": "Brocade Robes",
       "tpm": 3
+    },
+    "Date plantation": {
+      "resource": "Dates",
+      "tpm": 3
+    },
+    "Goat Farm": {
+      "resource": "Milk",
+      "tpm": 1.5
+    },
+    "Carpet Workshop": {
+      "resource": "Carpets",
+      "tpm": 1.5
+    },
+    "Confectioner's Workshop": {
+      "resource": "Marzipan",
+      "tpm": 4
+    },
+    "Roasting House": {
+      "resource": "Coffee",
+      "tpm": 1
+    },
+    "Pearl Workshop": {
+      "resource": "Pearl Necklaces",
+      "tpm": 1
+    },
+    "Perfumery": {
+      "resource": "Perfume",
+      "tpm": 1
     }
   },
   "peoples": {
@@ -116,10 +151,18 @@
       "Candlestick": 60
     },
     "Nomads": {
-
+      "Dates": 666,
+      "Milk": 344,
+      "Carpets": 165
     },
     "Envoys": {
-
+      "Dates": 500,
+      "Marzipan": 163,
+      "Milk": 225,
+      "Coffee": 100,
+      "Carpets": 100,
+      "Pearl Necklaces": 133,
+      "Perfume": 80
     }
   }
 }
