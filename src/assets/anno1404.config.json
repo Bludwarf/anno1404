@@ -22,6 +22,60 @@
     "Pearl Necklaces",
     "Perfume"
   ],
+  "resourceConsumptionConditions": {
+    "Beer": {
+      "people": "Patricians",
+      "count": 510
+    },
+    "Leather Jerkins": {
+      "people": "Patricians",
+      "count": 690
+    },
+    "Books": {
+      "people": "Patricians",
+      "count": 940
+    },
+    "Fur Coats": {
+      "people": "Noblemen",
+      "count": 950
+    },
+    "Wine": {
+      "people": "Noblemen",
+      "count": 1500
+    },
+    "Glasses":  {
+      "people": "Noblemen",
+      "count": 2200
+    },
+    "Candlestick": {
+      "people": "Noblemen",
+      "count": 3000
+    },
+    "Brocade Robes": {
+      "people": "Noblemen",
+      "count": 4000
+    },
+    "Milk": {
+      "people": "Nomads",
+      "count": 145
+    },
+    "Carpets": {
+      "people": "Nomads",
+      "count": 295
+    },
+    "Pearl Necklaces": {
+      "people": "Envoys",
+      "count": 1040
+    },
+    "Perfume": {
+      "people": "Envoys",
+      "count": 2200
+    },
+    "Marzipan": {
+      "people": "Envoys",
+      "count": 4000
+    }
+  },
   "buildings": {
     "Fisherman": {
       "resource": "Fish",

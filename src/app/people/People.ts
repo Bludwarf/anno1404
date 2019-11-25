@@ -47,7 +47,12 @@ export class People {
     return consumption;
   }
 
-  getConsumption(resource: string): number {
+  getConsumption(resource: string, peoples: Peoples): number {
+    const resourceConsumptionCondition = config.resourceConsumptionConditions[resource];
+    if (resourceConsumptionCondition && peoples[resourceConsumptionCondition.people].count < resourceConsumptionCondition.count) {
+      return 0;
+    }
+
     const consumptionRatio = this.consumptionRatios[resource];
     if (!consumptionRatio) {
       return 0;
@@ -57,6 +62,39 @@ export class People {
 
   get image(): string {
     return `assets/images/${this.id}.png`;
+  }
+}
+
+export class Peoples {
+  public Beggars = new People('Beggars', 'Mendiants', 'Bettler');
+  public Peasants = new People('Peasants', 'Paysans', 'Bauer');
+  public Citizens = new People('Citizens', 'Citoyens', 'Buerger');
+  public Patricians = new People('Patricians', 'Patriciens', 'Patrizier');
+  public Noblemen = new People('Noblemen', 'Nobles', 'Adlige');
+  public Nomads = new People('Nomads', 'Nomades', 'Normaden');
+  public Envoys = new People('Envoys', 'Émissaires', 'Gesandte');
+
+  toArray(): People[] {
+    return [
+      this.Beggars,
+      this.Peasants,
+      this.Citizens,
+      this.Patricians,
+      this.Noblemen,
+      this.Nomads,
+      this.Envoys
+    ];
+  }
+
+  /**
+   * Calls a defined callback function on each element of an array, and returns an array that contains the results.
+   * @param callbackfn A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element
+   * in the array.
+   * @param thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as
+   * the this value.
+   */
+  map<U>(callbackfn: (value: People, index: number, array: People[]) => U, thisArg?: any): U[] {
+    return this.toArray().map(callbackfn, thisArg);
   }
 }
 

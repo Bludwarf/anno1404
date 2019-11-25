@@ -19,7 +19,7 @@
         </li>
       </ol>
 
-      <ol *ngFor="let currentPeople of people">
+      <ol *ngFor="let currentPeople of people.toArray()">
         <li>
           <ul>
             <li><img [src]="currentPeople.image" height="46" width="46"
