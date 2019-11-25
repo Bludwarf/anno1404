@@ -60,7 +60,7 @@
         </li>
         <li>
           <select class="itemselect saveinput"
-                  onchange="$('#itemresult_1').text($('#itemselect_1').val()*25.00)">
+                  onchange="$('#itemresult_1').text($('#itemselect_1').val()*25.00)" disabled>
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -99,16 +99,9 @@
           </div>
         </li>
         <li>
-          <div onclick="javascript:resetform();" class="button_2">
+          <div (click)="resetform()" class="button_2">
             <div class="button_2_left"></div>
             <div class="button_2_center"></div>
-            <div class="button_2_right"></div>
-          </div>
-        </li>
-        <li>
-          <div onclick="javascript:calcform();" class="button_2">
-            <div class="button_2_left"></div>
-            <div class="button_2_center">Calculer</div>
             <div class="button_2_right"></div>
           </div>
         </li>

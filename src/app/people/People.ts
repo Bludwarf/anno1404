@@ -96,6 +96,11 @@ export class Peoples {
   map<U>(callbackfn: (value: People, index: number, array: People[]) => U, thisArg?: any): U[] {
     return this.toArray().map(callbackfn, thisArg);
   }
+
+  reset() {
+    const peopleNames = Object.keys(config.peoples);
+    peopleNames.forEach(peopleName => this[peopleName].count = 0);
+  }
 }
 
 function getConsumptionRatios(consKgPer100PerMin: number, prodTonsPerMin: number) {
