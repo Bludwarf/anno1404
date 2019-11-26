@@ -4,16 +4,14 @@
       <ol style="padding-right:5px; border-right:1px solid #cecece;">
         <li>
           <ul>
-            <li><input type="radio" name="switchRadio" value="bewohner" checked="checked" alt=""></li>
-            <li><img src="assets/images/iconBewohner.png" height="22" width="22"
-                     alt=""></li>
+            <li><input type="radio" name="switchRadio" value="bewohner" checked="checked"></li>
+            <li><img src="assets/images/iconBewohner.png" alt="House"></li>
           </ul>
         </li>
         <li>
           <ul>
-            <li><input type="radio" name="switchRadio" value="haus" alt=""></li>
-            <li><img src="assets/images/iconHaus.png" height="22" width="22"
-                     alt="">
+            <li><input type="radio" name="switchRadio" value="haus"></li>
+            <li><img src="assets/images/iconHaus.png" alt="House">
             </li>
           </ul>
         </li>
@@ -22,32 +20,23 @@
       <ol *ngFor="let currentPeople of people.toArray()">
         <li>
           <ul>
-            <li><img [src]="currentPeople.image" height="46" width="46"
-                     [alt]="currentPeople.id"></li>
+            <li><img [src]="currentPeople.image" [alt]="currentPeople.id"></li>
             <li>{{currentPeople.id}}</li>
           </ul>
         </li>
         <li>
           <ul>
-            <li><input type="radio" checked="checked" alt=""></li>
-            <li><img src="assets/images/iconBewohner.png" height="22" width="22"
-                     alt=""></li>
-            <li><input type="number"
-                       class="cText cTextwidth saveinput bewohnerInput" min="0" max="99999"
-                       [(ngModel)]="currentPeople.count">
+            <li><input type="radio" checked="checked"></li>
+            <li><img src="assets/images/iconBewohner.png" alt="People"></li>
+            <li><input type="number" class="cText cTextwidth" min="0" max="99999" [(ngModel)]="currentPeople.count">
             </li>
           </ul>
         </li>
         <li>
           <ul>
-            <li><input type="radio"
-                       [class]="currentPeople.resName.toLowerCase() + 'Radio'" value="haus" alt=""></li>
-            <li><img src="assets/images/iconHaus.png" height="22" width="22"
-                     alt="">
-            </li>
-            <li><input type="text" value="0"
-                       class="cText cTextwidth saveinput hausInput" maxlength="6" alt="" disabled
-                       style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+            <li><input type="radio" [class]="currentPeople.resName.toLowerCase() + 'Radio'"></li>
+            <li><img src="assets/images/iconHaus.png" alt="House"></li>
+            <li><input type="text" value="0" class="cText cTextwidth" maxlength="6" disabled></li>
           </ul>
         </li>
       </ol>
@@ -56,7 +45,7 @@
 
     <div class="items">
       <ol *ngFor="let resourceName of resourceNames">
-        <li><img [src]="getImageSrc(resourceName)" height="32" width="32" alt="">
+        <li><img [src]="getImageSrc(resourceName)" width="32" alt="">
         </li>
         <li>
           <select class="itemselect saveinput"
@@ -140,7 +129,7 @@
       <tr>
         <th></th>
         <td *ngFor="let resourceName of resourceNames">
-          <img [src]="getImageSrc(resourceName)" height="46" width="46"
+          <img [src]="getImageSrc(resourceName)" width="46"
                [alt]="resourceName" [title]="resourceName">
         </td>
       </tr>
@@ -233,7 +222,7 @@
       <tr>
         <th>Chaines de production</th>
         <td *ngFor="let resourceName of resourceNames">
-          <img src="assets/images/iconLupe.png" height="46" width="46"
+          <img src="assets/images/iconLupe.png" *ngIf="getConsumption(resourceName) > 0"
                alt="iconLupe" style="cursor:pointer;"
                onclick="showPK('5','1','100.0');">
         </td>
